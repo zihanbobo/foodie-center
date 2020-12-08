@@ -200,7 +200,7 @@
 						.then(res => {
 							if (res.data.status == 200) {
 								var grid = res.data.data;
-								var myCommentList = grid.rows;
+								var myCommentList = grid.records;
 								this.myCommentList = myCommentList;
 
 								for (var i = 0; i < myCommentList.length; i++) {
@@ -210,8 +210,8 @@
 									myCommentList[i].createdTime = formatedTime;
 								}
 								// console.log(myCommentList);
-								var maxPage = grid.total; // 获得总页数
-								var total = grid.records; // 获得总记录数
+								var maxPage = grid.pages; // 获得总页数
+								var total = grid.total; // 获得总记录数
 
 								this.maxPage = maxPage;
 								this.total = total;
